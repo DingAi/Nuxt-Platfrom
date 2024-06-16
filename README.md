@@ -2,6 +2,8 @@
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
+不确定在跑项目的时候会不会出现问题，记录一下，更新一下NPM中的nuxt包
+
 ## Setup
 
 Make sure to install the dependencies:
