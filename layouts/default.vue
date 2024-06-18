@@ -7,7 +7,7 @@
       <slot/>
     </main>
     <footer>
-      
+
     </footer>
   </div>
 </template>
