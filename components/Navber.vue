@@ -1,13 +1,13 @@
 <script setup lang="ts">
-  const showSubMenu = ref(false)
+const showSubMenu = ref(false)
 
-  function toggleSubMenu() {
-    showSubMenu.value = !showSubMenu.value
-  }
+function toggleSubMenu() {
+  showSubMenu.value = !showSubMenu.value
+}
 </script>
 
 <template>
-  <nav class="bg-gray-800 py-4 text-white">
+  <nav class="bg-gray-800 py-4 text-white sticky top-0 z-50">
     <div class="flex justify-between items-center mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
       <div class="flex items-center">
         <nuxt-link to="/" class="font-bold text-xl">Platfrom</nuxt-link>
@@ -16,9 +16,9 @@
         <nuxt-link to="/" class="hover:bg-gray-700 px-4 py-2 rounded-md"
           :class="{ 'bg-gray-700': $route.path === '/' }">Home</nuxt-link>
         <nuxt-link to="/analysis" class="hover:bg-gray-700 px-4 py-2 rounded-md"
-          :class="{ 'bg-gray-700': $route.path === '/' }">Analysis</nuxt-link>
+          :class="{ 'bg-gray-700': $route.path === '/analysis' }">Analysis</nuxt-link>
         <nuxt-link to="/history" class="hover:bg-gray-700 px-4 py-2 rounded-md"
-          :class="{ 'bg-gray-700': $route.path === '/login' }">History</nuxt-link>
+          :class="{ 'bg-gray-700': $route.path === '/history' }">History</nuxt-link>
         <div class="relative">
           <button @click="toggleSubMenu" :class="{ 'bg-gray-700': $route.path.startsWith('/master') }"
             class="flex items-center hover:bg-gray-700 px-4 py-2 rounded-md">
