@@ -1,15 +1,14 @@
 <template>
   <div>
-    <h1 class="text-center text-green-300">
+    <h1 class="text-6xl text-center text-green-300">
       主站的数据页面
     </h1>
   </div>
 </template>
 
 <script lang="ts" setup>
-
+  import { useFetch } from '#app'
+  const { data, error } = await useFetch('https://api.example.com/data')
 </script>
 
-<style lang="less" scoped>
-
-</style>
+<style lang="less" scoped></style>

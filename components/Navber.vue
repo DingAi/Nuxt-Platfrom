@@ -1,32 +1,35 @@
 <script setup lang="ts">
-const showSubMenu = ref(false)
+  const showSubMenu = ref(false)
 
-function toggleSubMenu() {
-  showSubMenu.value = !showSubMenu.value
-}
+  function toggleSubMenu() {
+    showSubMenu.value = !showSubMenu.value
+  }
 </script>
 
 <template>
-  <nav class="bg-gray-800 text-white py-4">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+  <nav class="bg-gray-800 py-4 text-white">
+    <div class="flex justify-between items-center mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
       <div class="flex items-center">
-        <a href="/" class="text-xl font-bold">Platfrom</a>
+        <nuxt-link to="/" class="font-bold text-xl">Platfrom</nuxt-link>
       </div>
       <div class="flex items-center">
-        <nuxt-link to="/" class="px-4 py-2 hover:bg-gray-700 rounded-md"
+        <nuxt-link to="/" class="hover:bg-gray-700 px-4 py-2 rounded-md"
           :class="{ 'bg-gray-700': $route.path === '/' }">Home</nuxt-link>
-        <nuxt-link to="/login" class="px-4 py-2 hover:bg-gray-700 rounded-md"
-          :class="{ 'bg-gray-700': $route.path === '/login' }">Login</nuxt-link>
+        <nuxt-link to="/analysis" class="hover:bg-gray-700 px-4 py-2 rounded-md"
+          :class="{ 'bg-gray-700': $route.path === '/' }">Analysis</nuxt-link>
+        <nuxt-link to="/history" class="hover:bg-gray-700 px-4 py-2 rounded-md"
+          :class="{ 'bg-gray-700': $route.path === '/login' }">History</nuxt-link>
         <div class="relative">
           <button @click="toggleSubMenu" :class="{ 'bg-gray-700': $route.path.startsWith('/master') }"
-            class="px-4 py-2 hover:bg-gray-700 rounded-md flex items-center">
-            Master
+            class="flex items-center hover:bg-gray-700 px-4 py-2 rounded-md">
+            Stations
           </button>
-          <div v-if="showSubMenu" class="absolute z-10 bg-gray-800 rounded-md py-2 w-48 shadow-lg">
-            <nuxt-link to="/master01" :class="{ 'bg-gray-700': $route.path === '/master01' }"
-              class="block px-4 py-2 hover:bg-gray-700">Index</nuxt-link>
-            <nuxt-link to="/master01/slave-data" :class="{ 'bg-gray-700': $route.path === '/master01/slave-data' }"
-              class="block px-4 py-2 hover:bg-gray-700">slave-data</nuxt-link>
+          <div v-if="showSubMenu" class="z-10 absolute bg-gray-800 shadow-lg py-2 rounded-md w-48">
+            <nuxt-link @click="toggleSubMenu" to="/master01" :class="{ 'bg-gray-700': $route.path === '/master01' }"
+              class="block hover:bg-gray-700 px-4 py-2">Index</nuxt-link>
+            <nuxt-link @click="toggleSubMenu" to="/master01/slave-data"
+              :class="{ 'bg-gray-700': $route.path === '/master01/slave-data' }"
+              class="block hover:bg-gray-700 px-4 py-2">slave-data</nuxt-link>
           </div>
         </div>
       </div>
@@ -42,4 +45,6 @@ function toggleSubMenu() {
 
 .relative:hover .hidden {
   display: block;
-}</style>
+  padding: 0.5rem;
+}
+</style>

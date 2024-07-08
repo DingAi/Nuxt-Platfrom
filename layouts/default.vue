@@ -1,10 +1,12 @@
 <template>
   <div>
     <header>
-      <Navber/>
+      <Navber />
     </header>
     <main>
-      <slot/>
+      <div class="mx-auto p-2 container">
+        <slot />
+      </div>
     </main>
     <footer>
 
@@ -16,6 +18,4 @@
 
 </script>
 
-<style lang="less" scoped>
-
-</style>
+<style lang="less" scoped></style>
