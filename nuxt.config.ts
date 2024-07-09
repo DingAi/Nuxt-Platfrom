@@ -2,4 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxt/ui", "@element-plus/nuxt"],
+  build: {
+    transpile: [/echarts/],
+  }
 })

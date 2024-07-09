@@ -32,5 +32,8 @@ const route = useRoute()，可以获取到当前页面的地址
 
 ### 布局
 
-在layouts文件夹里，default.vue是全局布局，写完布局之后在App.vue中使用传
+在layouts文件夹里，default.vue是全局布局，写完布局之后在App.vue中使用，在布局文件里调用组件的话不如在app.vue中调用组件
 
+# Nuxt数据获取
+
+Nuxt3 的好处是我不用再写跨域代理了

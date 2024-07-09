@@ -8,7 +8,6 @@
 
 <script lang="ts" setup>
   import { useFetch } from '#app'
-  const { data, error } = await useFetch('https://api.example.com/data')
 </script>
 
 <style lang="less" scoped></style>
