@@ -1,61 +1,63 @@
 <script setup lang="ts">
-  const showSubMenu = ref(false)
+const showSubMenu = ref(false)
 
-  function toggleSubMenu() {
-    showSubMenu.value = !showSubMenu.value
-  }
+function toggleSubMenu() {
+  showSubMenu.value = !showSubMenu.value
+}
 
-  const isHovering = ref(false)
-  function handleMouseEnter() {
-    isHovering.value = true
-    showSubMenu.value = true
-  }
+const isHovering = ref(false)
+function handleMouseEnter() {
+  isHovering.value = true
+  showSubMenu.value = true
+}
 
-  function handleMouseLeave() {
-    isHovering.value = false
-    setTimeout(() => {
-      if (!isHovering.value) {
-        showSubMenu.value = false
-      }
-    }, 100)
-  }
+function handleMouseLeave() {
+  isHovering.value = false
+  setTimeout(() => {
+    if (!isHovering.value) {
+      showSubMenu.value = false
+    }
+  }, 100)
+}
 
-  const isMobileMenuOpen = ref(false)
-  function toggleMenu() {
-    isMobileMenuOpen.value = !isMobileMenuOpen.value;
-  }
+const isMobileMenuOpen = ref(false)
+function toggleMenu() {
+  isMobileMenuOpen.value = !isMobileMenuOpen.value;
+}
 
 </script>
 
 <template>
   <nav class="top-0 z-50 sticky bg-gray-800 py-4 text-white">
-    <div class="flex justify-between items-center mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <div class="flex justify-between items-center mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl border-green-100">
       <div class="flex items-center">
-        <nuxt-link to="/" class="font-bold text-xl">Platfrom</nuxt-link>
+        <nuxt-link to="/" class="font-bold text-xl text-green-500">Platfrom</nuxt-link>
       </div>
-      <div class="flex items-center">
+      <div class="flex items-center font-black">
         <nuxt-link to="/" class="hover:bg-gray-700 mx-2 px-4 py-2 rounded-md"
-          :class="{ 'bg-gray-700': $route.path === '/' }">Home</nuxt-link>
-          <nuxt-link to="/history" class="hover:bg-gray-700 mx-2 px-4 py-2 rounded-md"
-          :class="{ 'bg-gray-700': $route.path === '/history' }">历史</nuxt-link>
+          :class="{ 'bg-gray-700 text-green-500': $route.path === '/' }">Home</nuxt-link>
+        <nuxt-link to="/history" class="hover:bg-gray-700 mx-2 px-4 py-2 rounded-md"
+          :class="{ 'bg-gray-700 text-green-500': $route.path === '/history' }">历史</nuxt-link>
         <nuxt-link to="/analysis" class="hover:bg-gray-700 mx-2 px-4 py-2 rounded-md"
-          :class="{ 'bg-gray-700': $route.path === '/analysis' }">数据分析</nuxt-link>
+          :class="{ 'bg-gray-700 text-green-500': $route.path === '/analysis' }">数据分析</nuxt-link>
         <div class="relative mx-2" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
-          <button :class="{ 'bg-gray-700': $route.path.startsWith('/master') }"
+          <button :class="{ 'bg-gray-700 text-green-500': $route.path.startsWith('/master') }"
             class="flex items-center hover:bg-gray-700 px-4 py-2 rounded-md">
             站点数据
           </button>
           <div v-if="showSubMenu"
             class="z-10 absolute bg-gray-800 shadow-lg py-2 rounded-md w-48 origin-top-right animate-zoom-in-up">
-            <nuxt-link @click="toggleSubMenu" to="/master01/" :class="{ 'bg-gray-700': $route.path === '/master01' }"
+            <nuxt-link @click="toggleSubMenu" to="/master01/"
+              :class="{ 'bg-gray-700 text-green-500': $route.path === '/master01' }"
               class="block hover:bg-gray-700 px-4 py-2">主站数据</nuxt-link>
             <nuxt-link @click="toggleSubMenu" to="/master01/slave-data"
-              :class="{ 'bg-gray-700': $route.path === '/master01/slave-data' }"
+              :class="{ 'bg-gray-700 text-green-500': $route.path === '/master01/slave-data' }"
               class="block hover:bg-gray-700 px-4 py-2">从站数据</nuxt-link>
           </div>
         </div>
       </div>
     </div>
+    <!-- <UDivider /> -->
   </nav>
 </template>
 

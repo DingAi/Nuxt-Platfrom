@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="bg-lime-50 h-full min-h-screen">
+  <div id="app" class=" bg-slate-900 h-full min-h-screen">
     <!-- <NuxtRouteAnnouncer /> -->
     <!-- <NuxtLayout> -->
     <Navber />
