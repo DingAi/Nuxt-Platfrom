@@ -28,10 +28,10 @@ function toggleMenu() {
 </script>
 
 <template>
-  <nav class="top-0 z-50 sticky bg-gray-800 py-4 text-white">
-    <div class="flex justify-between items-center mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl border-green-100">
+  <nav class="top-0 z-50 sticky bg-gray-800 shadow py-4 text-white">
+    <div class="flex justify-between items-center border-green-100 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
       <div class="flex items-center">
-        <nuxt-link to="/" class="font-bold text-xl text-green-500">Platfrom</nuxt-link>
+        <nuxt-link to="/" class="font-bold text-green-500 text-xl">Platfrom</nuxt-link>
       </div>
       <div class="flex items-center font-black">
         <nuxt-link to="/" class="hover:bg-gray-700 mx-2 px-4 py-2 rounded-md"
